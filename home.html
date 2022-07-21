@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+
+    body{
+        background: linear-gradient(green,greenyellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
+        font-family: cursive;
+    
+    }
+    div{
+        padding: 30px;
+        background: white;
+        border-radius: 20px 5px;
+    }
+    ul{
+      line-height: normal;  
+    }
+    .btn1{
+        color: black;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-family: cursive;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    cursor:pointer;
+
+    }
+    .btn2{
+        color: black;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    font-family: cursive;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    cursor:pointer;
+
+
+    }
+    .btn1:hover{
+        background: green;
+        color: white;
+    }
+    .btn2:hover{
+        background: green;
+        color: white;
+    }
+           
+           
+            
+    
+        
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Welcome to Aliustotle's <br>Multiplication Game</h1>
+    
+        <h3>The rules of the game are as follow:</h3>
+        <ul>
+            <li>The game score starts from any number below or equal to Zero(0).</li>
+            <li>Answer must be inputed before clicking submit, as<br> failure to do so will equal a wrong asnwer.</li>
+            <li>A correct answer will increase your score by Five (5) points.</li>
+            <li>A wrong answer will decrease your score by Five (5) points.</li>
+            <li>When your score is greater than or equal to fifty(50) <br>you will have to go to next stage to continue.</li>
+        </ul>
+        <button class="btn1" onclick="location.href='units-by-unit.html'">Start Game</button>
+        <br>
+        <button class="btn2" onclick="location.href='stages.html'">Select Stage</button>
+    
+</div>
+    
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tens-by-units</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Tens-by-unit</h1>
+    <form class="form" id="form">
+        <h4 class="score" id ="score">score: 0</h4>
+        <h1 id="question">What is 1 multiply by 1 ?</h1>
+        <input type="text" class="input" id="input" placeholder="Enter your answer" autofocus autocomplete="off">
+        <button type="submit" class="btn" id="submit">Submit</button>
+    </form>
+    <button id="nextStage"  class="nextStage" onclick="location.href='tens-by-tens.html'">Next Stage</button>
+    <script>
+        
+        const num1 = Math.ceil(Math.random()*(100-10)+10);
+        const num2 = Math.ceil(Math.random()*(10-1)+1);
+        
+        
+        
+const questionEl = document.getElementById("question");
+const formEl = document.getElementById("form");
+const inputEl = document.getElementById("input");
+let score = JSON.parse(localStorage.getItem("score"));
+const scoreEl = document.getElementById("score");
+const nextStageEl = document.getElementById("nextStage");
+const submitEl = document.getElementById("submit");
+
+
+nextStageEl.onclick = function(){
+   
+    location.href = "tens-by-tens.html";
+   
+}
+
+
+
+
+scoreEl.innerText = `score: ${score}`
+
+questionEl.innerText = ` What is ${num1} multiplied by ${num2}?`
+
+const correctAns = num1 * num2;
+if (!score) {
+    score = 0;       
+}
+
+
+submitEl.addEventListener("click",()=>{
+    const userAns = +inputEl.value
+    if (userAns === correctAns) {
+        score +=5;
+        updateLocalStorage()  
+     
+    }
+else{
+    score -=5;
+    updateLocalStorage()
+    
+}
+});
+
+nextStageEl.addEventListener("click",()=>{
+    
+    
+    if (score =50){
+        score = 0;
+        updateLocalStorage()
+    }
+
+    
+});
+
+    if(score < 50){
+        nextStageEl.disabled= true; 
+}
+if(score >= 50){
+    submitEl.disabled = true;
+}
+
+
+
+
+
+function updateLocalStorage() {
+    localStorage.setItem("score",JSON.stringify(score))
+    
+}
+
+
+        
+            </script>
+    
+</body>
+</html>
